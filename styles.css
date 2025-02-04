@@ -9,6 +9,10 @@ body {
   background-color: #fff9f2;
 }
 
+.whole-app {
+  display: flex;
+}
+
 .left-whole-section {
   border: 1px solid #c9caca;
   background-color: white;
@@ -33,4 +37,25 @@ body {
 
 .task-choice-header li {
   cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  padding-left: 20px;
+  height: 3.5rem;
+  width: 70rem;
+  padding-top: 10px;
+}
+
+.search-input {
+  height: 45px;
+  display: flex;
+  width: 30rem;
+  border: 1px dotted #c9caca;
+  border-radius: 12px;
+}
+
+.search-bar ::placeholder {
+  font-size: 18px;
+  color: #556d85a8;
 }
