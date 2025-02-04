@@ -44,7 +44,7 @@ body {
   padding-left: 20px;
   height: 3.5rem;
   width: 70rem;
-  padding-top: 10px;
+  padding-top: 4px;
 }
 
 .search-input {
@@ -53,9 +53,23 @@ body {
   width: 30rem;
   border: 1px dotted #c9caca;
   border-radius: 12px;
+  height: 50px;
+  font-size: 14px;
+  background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 40px;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-shadow: none;
 }
 
 .search-bar ::placeholder {
   font-size: 18px;
-  color: #556d85a8;
+  border: 1px solid red;
+}
+
+#search-bar {
+  color: #22476da8;
+  font-size: 20px;
 }
