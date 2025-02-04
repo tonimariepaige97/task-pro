@@ -8,3 +8,11 @@ body {
   margin: 0;
   background-color: #fdf5ec;
 }
+
+.left-whole-section {
+  border: 1px solid black;
+  height: 48rem;
+  width: 24rem;
+  margin-top: 10px;
+  border-radius: 12px;
+}
