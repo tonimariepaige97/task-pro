@@ -39,6 +39,8 @@ body {
   cursor: pointer;
 }
 
+/* SEARCH BAR */
+
 .search-bar {
   display: flex;
   padding-left: 20px;
@@ -72,4 +74,14 @@ body {
   color: #22476da8;
   font-size: 20px;
   border-color: #a0a2a2;
+}
+
+/* TASK SECTION */
+.create-task-section {
+  border: 1px solid red;
+  height: 60px;
+  margin-left: 20.5px;
+  margin-top: 30px;
+  background: #fff;
+  border-radius: 12px;
 }
