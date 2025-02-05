@@ -78,10 +78,21 @@ body {
 
 /* TASK SECTION */
 .create-task-section {
-  border: 1px solid red;
+  border: 1px solid #22476da8;
   height: 60px;
   margin-left: 20.5px;
   margin-top: 30px;
   background: #fff;
   border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* TASK BUTTONS */
+.task-buttons {
+  height: 43px;
+  width: 120px;
 }
