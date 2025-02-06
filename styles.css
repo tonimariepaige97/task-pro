@@ -6,7 +6,7 @@
 body {
   height: 100%;
   margin: 0;
-  background-color: #fff9f2;
+  background-color: #f1f7fa;
 }
 
 .whole-app {
@@ -21,16 +21,15 @@ body {
 }
 
 .task-choice-header {
-  font-size: 18px;
+  font-size: 15px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
-  color: #2c3e50;
+  color: #325e8a;
   list-style: none;
   display: flex;
   gap: 20px;
   justify-content: center;
   border-bottom: 1px solid #c9caca;
-  border-radius: 12px;
   height: 3.5rem;
   align-items: center;
 }
@@ -50,13 +49,14 @@ body {
 }
 
 .search-input {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   outline-color: #c9caca;
   height: 45px;
   display: flex;
   width: 30rem;
   border-radius: 12px;
   height: 50px;
-  font-size: 14px;
+  font-size: 12px;
   background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
   background-repeat: no-repeat;
   background-position: left center;
@@ -78,12 +78,13 @@ body {
 
 /* TASK SECTION */
 .create-task-section {
-  border: 1px solid #22476da8;
+  border: 1px solid #a0a2a2;
   height: 60px;
   margin-left: 20.5px;
+  margin-right: 15px;
   margin-top: 30px;
   background: #fff;
-  border-radius: 12px;
+  border-radius: 3px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,18 +92,28 @@ body {
   padding-left: 10px;
 }
 
+.all-tasks {
+  color: #565656;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #325e8a;
+}
+
 /* TASK BUTTONS */
 
 .task-buttons {
   font-size: 15px;
-  color: #7f7e7e;
+  color: #717070;
   height: 43px;
   width: 120px;
-  border-radius: 12px;
+  border-radius: 5px;
   background-color: #fcf8f2;
   cursor: pointer;
   border: none;
   outline: 2px dotted #949494b8;
+}
+
+.task-buttons:hover {
+  background-color: #fff3e4e0;
 }
 
 .power-mode-btn {
