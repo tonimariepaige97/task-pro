@@ -95,4 +95,9 @@ body {
 .task-buttons {
   height: 43px;
   width: 120px;
+  border-radius: 12px;
+  background-color: #fcf8f2;
+  cursor: pointer;
+  border: none;
+  outline: 1px solid #d4d5d5b8;
 }
