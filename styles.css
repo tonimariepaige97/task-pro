@@ -92,12 +92,19 @@ body {
 }
 
 /* TASK BUTTONS */
+
 .task-buttons {
+  font-size: 15px;
+  color: #7f7e7e;
   height: 43px;
   width: 120px;
   border-radius: 12px;
   background-color: #fcf8f2;
   cursor: pointer;
   border: none;
-  outline: 1px solid #d4d5d5b8;
+  outline: 2px dotted #949494b8;
+}
+
+.power-mode-btn {
+  margin-left: 5px;
 }
