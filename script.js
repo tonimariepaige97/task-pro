@@ -4,5 +4,5 @@ const creationOfTask = document.querySelector(".right-section-of-screen");
 
 // EVENT LISTENERS
 createTaskBtn.addEventListener("click", function () {
-  console.log("clicked");
+  creationOfTask.innerHTML = "";
 });
