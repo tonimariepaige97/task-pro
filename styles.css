@@ -93,7 +93,6 @@ body {
 }
 
 .all-tasks {
-  color: #565656;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #325e8a;
 }
@@ -118,4 +117,19 @@ body {
 
 .power-mode-btn {
   margin-left: 5px;
+}
+
+/* Create Task Section */
+.create-task-header {
+  border: 1px solid red;
+  color: #325e8a;
+  font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 18px;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 0.5px solid black;
+  width: 70rem;
 }
