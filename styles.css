@@ -23,6 +23,7 @@ body {
 .task-choice-header {
   font-size: 15px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 3.9rem;
   font-weight: 500;
   color: #325e8a;
   list-style: none;
@@ -30,7 +31,6 @@ body {
   gap: 20px;
   justify-content: center;
   border-bottom: 1px solid #c9caca;
-  height: 3.5rem;
   align-items: center;
 }
 
@@ -121,9 +121,9 @@ body {
 
 /* Create Task Section */
 .create-task-header {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   color: #325e8a;
-  font-size: 15px;
+  font-size: 18px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
@@ -132,4 +132,5 @@ body {
   padding-bottom: 16px;
   border-bottom: 0.5px solid black;
   width: 70rem;
+  height: 1.8rem;
 }
