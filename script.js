@@ -1,9 +1,10 @@
 const rightContentSection = document.querySelector(".right-content-section");
 const wholeApp = document.querySelector(".whole-app");
+const createTaskBtn = document.createElement("button");
+const allTasksPage = document.createElement("div");
 
 function displayAllTasksPage() {
   // create an all tasks page for the task page
-  const allTasksPage = document.createElement("div");
   allTasksPage.classList.add("all-tasks-page");
   rightContentSection.append(allTasksPage);
 
@@ -41,7 +42,6 @@ function displayAllTasksPage() {
   createTaskSection.append(buttonsContainer);
 
   // create add task button
-  const createTaskBtn = document.createElement("button");
   createTaskBtn.classList.add("create-task-button");
   createTaskBtn.textContent = "+ Create Task";
   buttonsContainer.append(createTaskBtn);
@@ -55,8 +55,13 @@ function displayAllTasksPage() {
 
 displayAllTasksPage();
 
+function displayCreateTask() {}
 // // EVENT LISTENERS
 // createTaskBtn.addEventListener("click", function () {
 //   creationOfTask.innerText = "";
 //   displayCreateTaskSection();
 // });
+
+createTaskBtn.addEventListener("click", function () {
+  allTasksPage.innerText = "";
+});
