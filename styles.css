@@ -17,7 +17,12 @@ body {
   border: 1px solid #c9caca;
   background-color: white;
   height: 50.6rem;
-  width: 20rem;
+  min-width: 20rem;
+}
+
+.right-content-section {
+  height: 50rem;
+  width: 50rem;
 }
 
 .task-choice-header {
@@ -38,29 +43,34 @@ body {
   cursor: pointer;
 }
 
-/* SEARCH BAR */
-
-.search-bar {
-  display: flex;
-  padding-left: 20px;
-  height: 3.5rem;
-  width: 70rem;
-  padding-top: 12px;
+.task-display {
+  height: 680px;
+  border: 1px solid pink;
 }
 
-.search-input {
+/* SEARCH BAR */
+
+.search-bar-display {
+  height: 3.5rem;
+  width: 40rem;
+  color: #717070;
+  font-size: 20px;
+}
+
+.search-bar-display {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   outline-color: #c9caca;
-  height: 45px;
   display: flex;
   width: 30rem;
   border-radius: 12px;
   height: 50px;
-  font-size: 12px;
+  font-size: 18px;
   background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 40px;
+  margin-left: 15px;
+  margin-top: 15px;
   background-color: #fff;
   border: 1px solid #000;
   box-shadow: none;
@@ -70,37 +80,27 @@ body {
   font-size: 18px;
 }
 
-#search-bar {
-  color: #22476da8;
-  font-size: 20px;
-  border-color: #a0a2a2;
-}
-
 /* TASK SECTION */
-.create-task-section {
-  border: 1px solid #a0a2a2;
-  height: 60px;
-  margin-left: 20.5px;
-  margin-right: 15px;
-  margin-top: 30px;
-  background: #fff;
-  border-radius: 3px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 10px;
-  padding-left: 10px;
+
+.all-tasks-page {
+  height: 810px;
+  width: 800px;
 }
 
 .all-tasks {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #325e8a;
+  width: 50rem;
 }
 
 /* TASK BUTTONS */
+.buttons-container {
+  width: 300px;
+}
 
-.task-buttons {
-  font-size: 15px;
+.create-task-button,
+.power-mode-button {
+  font-size: 17px;
   color: #717070;
   height: 43px;
   width: 120px;
@@ -109,28 +109,48 @@ body {
   cursor: pointer;
   border: none;
   outline: 2px dotted #949494b8;
+  margin-left: 25px;
 }
 
-.task-buttons:hover {
+.power-mode-button {
+  margin-left: 7px;
+}
+
+.create-task-button:hover {
   background-color: #fff3e4e0;
 }
 
-.power-mode-btn {
-  margin-left: 5px;
+.power-mode-button:hover {
+  background-color: #fff3e4e0;
+}
+/* Create Task Section */
+
+.create-task-container {
+  margin-top: 20px;
+  margin-left: 15px;
+  height: 120px;
+  width: 900px;
+  border-radius: 2px;
 }
 
-/* Create Task Section */
-.create-task-header {
-  /* border: 1px solid red; */
+.create-task-section {
   color: #325e8a;
   font-size: 18px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding-top: 18px;
-  align-items: center;
   padding-bottom: 16px;
-  border-bottom: 0.5px solid black;
-  width: 70rem;
-  height: 1.8rem;
+  width: 780px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #949494b8;
+  background-color: #fff;
+}
+
+.all-tasks-p-element {
+  display: flex;
+  align-items: center;
+  margin-left: 3px;
+  padding-bottom: 10px;
 }
