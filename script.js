@@ -72,10 +72,11 @@ function displayCreateTask() {
   createInsideDisplayDiv.classList.add("create-inside-display-div");
   createTaskDisplay.append(createInsideDisplayDiv);
 
-  const createYourTaskElement = document.createElement("div");
-  createYourTaskElement.classList.add("create-your-task-element");
-  createYourTaskElement.textContent = "Create Your Task";
-  createInsideDisplayDiv.append(createYourTaskElement);
+  //
+  const createYourTaskHeader = document.createElement("div");
+  createYourTaskHeader.classList.add("create-your-task-header");
+  createYourTaskHeader.textContent = "Create Your Task";
+  createInsideDisplayDiv.append(createYourTaskHeader);
 }
 
 // EVENT LISTENERS
