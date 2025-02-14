@@ -66,12 +66,19 @@ function displayCreateTask() {
   const createTaskDisplay = document.createElement("div");
   createTaskDisplay.classList.add("create-task-display");
   allTasksPage.append(createTaskDisplay);
+
+  // create div inside of create a task display
+  const createInsideDisplayDiv = document.createElement("div");
+  createInsideDisplayDiv.classList.add("create-inside-display-div");
+  createTaskDisplay.append(createInsideDisplayDiv);
+
+  const createYourTaskElement = document.createElement("div");
+  createYourTaskElement.classList.add("create-your-task-element");
+  createYourTaskElement.textContent = "Create Your Task";
+  createInsideDisplayDiv.append(createYourTaskElement);
 }
-// // EVENT LISTENERS
-// createTaskBtn.addEventListener("click", function () {
-//   creationOfTask.innerText = "";
-//   displayCreateTaskSection();
-// });
+
+// EVENT LISTENERS
 
 createTaskBtn.addEventListener("click", function () {
   allTasksPage.innerText = "";
