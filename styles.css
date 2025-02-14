@@ -154,6 +154,7 @@ body {
   padding-bottom: 10px;
 }
 
+/*  */
 .create-task-header {
   color: #325e8a;
   font-size: 18px;
@@ -196,4 +197,33 @@ body {
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid rgba(116, 202, 116, 0.318);
+}
+
+.create-task-list-div {
+  height: 555px;
+  width: 250px;
+  /* border: 1px solid red; */
+}
+
+.task-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* border: 1px solid red; */
+  font-size: 20px;
+  list-style: none;
+  color: rgba(24, 74, 24, 0.943);
+}
+
+.task-li:hover {
+  cursor: pointer;
+}
+
+.project-task:hover {
+  cursor: pointer;
+}
+
+.notes-task:hover {
+  cursor: pointer;
 }
