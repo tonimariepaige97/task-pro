@@ -67,16 +67,46 @@ function displayCreateTask() {
   createTaskDisplay.classList.add("create-task-display");
   allTasksPage.append(createTaskDisplay);
 
-  // create div inside of create a task display
+  // create div for left side of inside the create a task display
   const createInsideDisplayDiv = document.createElement("div");
   createInsideDisplayDiv.classList.add("create-inside-display-div");
   createTaskDisplay.append(createInsideDisplayDiv);
 
-  //
+  // create task header
   const createYourTaskHeader = document.createElement("div");
   createYourTaskHeader.classList.add("create-your-task-header");
   createYourTaskHeader.textContent = "Create Your Task";
   createInsideDisplayDiv.append(createYourTaskHeader);
+
+  // create div for creating which task to select
+  const createTaskListDiv = document.createElement("div");
+  createTaskListDiv.classList.add("create-task-list-div");
+  createInsideDisplayDiv.append(createTaskListDiv);
+
+  // create list that goes underneath task header
+  const taskList = document.createElement("li");
+  taskList.classList.add("task-list");
+  createTaskListDiv.append(taskList);
+
+  const taskLi = document.createElement("li");
+  taskLi.classList.add("task-li");
+  taskLi.textContent = "Task";
+  taskList.appendChild(taskLi);
+
+  const projectTask = document.createElement("li");
+  projectTask.classList.add("project-task");
+  projectTask.textContent = "Project";
+  taskList.appendChild(projectTask);
+
+  const notesTask = document.createElement("li");
+  notesTask.classList.add("notes-task");
+  notesTask.textContent = "Notes";
+  taskList.appendChild(notesTask);
+
+  // create div for the users input for their task
+  const usersInputDiv = document.createElement("div");
+  usersInputDiv.classList.add("users-input-div");
+  createTaskDisplay.append(usersInputDiv);
 }
 
 // EVENT LISTENERS
