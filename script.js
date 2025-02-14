@@ -55,7 +55,18 @@ function displayAllTasksPage() {
 
 displayAllTasksPage();
 
-function displayCreateTask() {}
+function displayCreateTask() {
+  // creating the create a task header
+  const createTaskHeader = document.createElement("p");
+  createTaskHeader.classList.add("create-task-header");
+  createTaskHeader.innerText = "Create A Task";
+  allTasksPage.append(createTaskHeader);
+
+  // creating create a task display
+  const createTaskDisplay = document.createElement("div");
+  createTaskDisplay.classList.add("create-task-display");
+  allTasksPage.append(createTaskDisplay);
+}
 // // EVENT LISTENERS
 // createTaskBtn.addEventListener("click", function () {
 //   creationOfTask.innerText = "";
@@ -64,4 +75,5 @@ function displayCreateTask() {}
 
 createTaskBtn.addEventListener("click", function () {
   allTasksPage.innerText = "";
+  displayCreateTask();
 });
