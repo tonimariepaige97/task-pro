@@ -170,6 +170,8 @@ body {
 }
 
 .create-task-display {
+  display: flex;
+  flex-direction: row;
   height: 600px;
   width: 800px;
   background-color: #fff;
@@ -206,6 +208,7 @@ body {
 }
 
 .task-list {
+  margin-left: 15px;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -213,7 +216,7 @@ body {
   /* border: 1px solid red; */
   font-size: 20px;
   list-style: none;
-  color: rgba(24, 74, 24, 0.943);
+  color: rgba(30, 94, 30, 0.943);
 }
 
 .task-li:hover {
@@ -226,4 +229,14 @@ body {
 
 .notes-task:hover {
   cursor: pointer;
+}
+
+/* User Input Side */
+.users-input-div {
+  height: 555px;
+  width: 500px;
+  margin-left: 23px;
+  margin-top: 23px;
+  border: 1px solid #e2eaee;
+  border-radius: 3px;
 }
