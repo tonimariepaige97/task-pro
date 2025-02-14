@@ -45,7 +45,6 @@ body {
 
 .task-display {
   height: 680px;
-  border: 1px solid pink;
 }
 
 /* SEARCH BAR */
@@ -188,13 +187,13 @@ body {
   border-right: 0.5px dotted #c5c4c4;
 }
 
-.create-your-task-element {
+.create-your-task-header {
   font-size: 20px;
   color: rgba(44, 107, 44, 0.74);
-  border: 1px solid red;
   height: 40px;
   width: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid rgba(116, 202, 116, 0.318);
 }
