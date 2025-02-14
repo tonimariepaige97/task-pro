@@ -154,3 +154,28 @@ body {
   margin-left: 3px;
   padding-bottom: 10px;
 }
+
+.create-task-header {
+  color: #325e8a;
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 18px;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 0.5px solid black;
+  width: 70rem;
+  height: 1.8rem;
+}
+
+.create-task-display {
+  height: 600px;
+  width: 800px;
+  background-color: #fff;
+  margin-top: 4rem;
+  margin-left: 10rem;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+  border-radius: 20px;
+}
