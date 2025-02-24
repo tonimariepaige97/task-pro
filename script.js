@@ -5,6 +5,9 @@ const allTasksPage = document.createElement("div");
 const userRenderTaskBtn = document.createElement("button");
 const taskTitleDiv = document.createElement("input");
 const tasksCreatedSection = document.createElement("div");
+const lowPriorityBtn = document.createElement("button");
+const mediumPriorityBtn = document.createElement("button");
+const highPriorityBtn = document.createElement("button");
 
 const arrayOfTasks = [];
 
@@ -128,6 +131,16 @@ function displayCreateTask() {
   priorityContainer.classList.add("priority-container");
   priorityContainer.textContent = "Priority";
   usersInputDiv.append(priorityContainer);
+
+  // create button div for buttons
+  const priorityBtns = document.createElement("div");
+  priorityBtns.classList.add("priority-btns");
+  priorityContainer.append(priorityBtns);
+
+  // add priority buttons for high, medium or low priority
+  lowPriorityBtn.classList.add("low-priority-btn");
+  lowPriorityBtn.textContent = "Low";
+  priorityBtns.append(lowPriorityBtn);
 
   // creating a create task button
   // userRenderTaskBtn.classList.add("user-render-task-btn");
