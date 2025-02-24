@@ -299,7 +299,18 @@ body {
 
 .priority-container {
   margin-top: 20px;
-  height: 40px;
+  height: 50px;
   width: 500px;
   border: 1px solid red;
+}
+
+.low-priority-btn {
+  color: green;
+  font-size: 14px;
+  background-color: #f8faf9;
+  border-radius: 5px;
+  border: 1px solid green;
+  height: 25px;
+  width: 48px;
+  cursor: pointer;
 }
