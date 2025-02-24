@@ -112,10 +112,16 @@ function displayCreateTask() {
   divForUserTextInput.append(taskTitleDiv);
 
   // create description div for users description
-  const descriptionDiv = document.createElement("div");
-  descriptionDiv.classList.add("description-div");
-  descriptionDiv.textContent = "Description";
-  usersInputDiv.append(descriptionDiv);
+  const divForDescriptionInput = document.createElement("div");
+  divForDescriptionInput.classList.add("description-input-div");
+  divForDescriptionInput.textContent = "Description";
+  usersInputDiv.append(divForDescriptionInput);
+
+  // create input for description text
+  const usersDescriptionText = document.createElement("input");
+  usersDescriptionText.classList.add("task-title-div");
+  usersDescriptionText.placeholder = "Enter Description";
+  divForDescriptionInput.append(usersDescriptionText);
 
   // creating a create task button
   // userRenderTaskBtn.classList.add("user-render-task-btn");
