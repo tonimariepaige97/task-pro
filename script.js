@@ -142,15 +142,24 @@ function displayCreateTask() {
   priorityContainer.textContent = "Priority";
   usersInputDiv.append(priorityContainer);
 
-  // create button div for buttons
+  // create button div for priority buttons
   const priorityBtns = document.createElement("div");
   priorityBtns.classList.add("priority-btns");
   priorityContainer.append(priorityBtns);
 
-  // add priority buttons for high, medium or low priority
+  // add low priority button
   lowPriorityBtn.classList.add("low-priority-btn");
-  lowPriorityBtn.textContent = "Low";
+  lowPriorityBtn.textContent = "LOW";
   priorityBtns.append(lowPriorityBtn);
+
+  // add a medium priority button
+  mediumPriorityBtn.classList.add("medium-priority-btn");
+  mediumPriorityBtn.textContent = "MEDIUM";
+  priorityBtns.append(mediumPriorityBtn);
+
+  // add a high priority button
+  highPriorityBtn.classList.add("high-priority-btn");
+  highPriorityBtn.textContent = "HIGH";
 
   // creating a create task button
   // userRenderTaskBtn.classList.add("user-render-task-btn");
@@ -172,15 +181,15 @@ createTaskBtn.addEventListener("click", function () {
   displayCreateTask();
 });
 
-userRenderTaskBtn.addEventListener("click", function () {
-  console.log(taskTitleDiv.value);
-  const taskItem = {
-    taskName: taskTitleDiv.value,
-    status: "In progress",
-  };
-  arrayOfTasks.push(taskItem);
-  updateTasks(taskTitleDiv.value);
-  console.log(arrayOfTasks);
-});
+// userRenderTaskBtn.addEventListener("click", function () {
+//   console.log(taskTitleDiv.value);
+//   const taskItem = {
+//     taskName: taskTitleDiv.value,
+//     status: "In progress",
+//   };
+//   arrayOfTasks.push(taskItem);
+//   updateTasks(taskTitleDiv.value);
+//   console.log(arrayOfTasks);
+// });
 
 // next step - figure out how to get the input from the users input div into the tasksCreatedSection
