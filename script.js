@@ -2,7 +2,7 @@ const rightContentSection = document.querySelector(".right-content-section");
 const wholeApp = document.querySelector(".whole-app");
 const createTaskBtn = document.createElement("button");
 const allTasksPage = document.createElement("div");
-const userCreateTaskBtn = document.createElement("button");
+const userRenderTaskBtn = document.createElement("button");
 const taskTitleDiv = document.createElement("input");
 const tasksCreatedSection = document.createElement("div");
 
@@ -12,18 +12,6 @@ function displayAllTasksPage() {
   // create an all tasks page for the task page
   allTasksPage.classList.add("all-tasks-page");
   rightContentSection.append(allTasksPage);
-
-  // create the container for the search bar display
-  // const searchBarContainer = document.createElement("div");
-  // searchBarContainer.classList.add("search-bar-container");
-  // allTasksPage.append(searchBarContainer);
-
-  // create the input for the search bar
-  // const searchBarDisplay = document.createElement("input");
-  // searchBarDisplay.classList.add("search-bar-display");
-  // searchBarDisplay.setAttribute("type", "text");
-  // searchBarDisplay.setAttribute("Placeholder", "search");
-  // allTasksPage.append(searchBarDisplay);
 
   // create the task container
   const createTaskContainer = document.createElement("div");
@@ -79,7 +67,7 @@ function displayCreateTask() {
   // create task header
   const createYourTaskHeader = document.createElement("div");
   createYourTaskHeader.classList.add("create-your-task-header");
-  createYourTaskHeader.textContent = "Create Your Task";
+  createYourTaskHeader.textContent = "Create A New Task";
   createInsideDisplayDiv.append(createYourTaskHeader);
 
   // create div for creating which task to select
@@ -112,18 +100,27 @@ function displayCreateTask() {
   usersInputDiv.classList.add("users-input-div");
   createTaskDisplay.append(usersInputDiv);
 
+  //creating a div for button and input
+  const divForUserTextInput = document.createElement("div");
+  divForUserTextInput.classList.add("div-for-user-text-input");
+  divForUserTextInput.textContent = "Title";
+  usersInputDiv.append(divForUserTextInput);
+
   // create title div for the task title
   taskTitleDiv.classList.add("task-title-div");
-  usersInputDiv.append(taskTitleDiv);
+  taskTitleDiv.placeholder = "Enter Title";
+  divForUserTextInput.append(taskTitleDiv);
+
+  // create description div for users description
+  const descriptionDiv = document.createElement("div");
+  descriptionDiv.classList.add("description-div");
+  descriptionDiv.textContent = "Description";
+  usersInputDiv.append(descriptionDiv);
 
   // creating a create task button
-  userCreateTaskBtn.classList.add(".userCreateTaskBtn");
-  userCreateTaskBtn.textContent = "Create Task";
-  usersInputDiv.append(userCreateTaskBtn);
-
-  // creating a div for the users tasks
-  tasksCreatedSection.classList.add("tasks-created-section");
-  usersInputDiv.append(tasksCreatedSection);
+  // userRenderTaskBtn.classList.add("user-render-task-btn");
+  // userRenderTaskBtn.textContent = "Create Task";
+  // divForBtnAndInput.append(userRenderTaskBtn);
 }
 
 function updateTasks() {
@@ -140,7 +137,7 @@ createTaskBtn.addEventListener("click", function () {
   displayCreateTask();
 });
 
-userCreateTaskBtn.addEventListener("click", function () {
+userRenderTaskBtn.addEventListener("click", function () {
   console.log(taskTitleDiv.value);
   const taskItem = {
     taskName: taskTitleDiv.value,
