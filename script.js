@@ -1,3 +1,13 @@
+//TODO array
+const todoArray = [
+  {
+    todoName: "Get eggs",
+    priority: "Low", // Low | Medium | High
+    dueDate: "02/27/25",
+    description: "I have to buy more eggs at the store this week",
+  },
+];
+
 const rightContentSection = document.querySelector(".right-content-section");
 const wholeApp = document.querySelector(".whole-app");
 const createTaskBtn = document.createElement("button");
