@@ -307,10 +307,15 @@ body {
 .low-priority-btn {
   color: green;
   font-size: 14px;
-  background-color: #f8faf9;
+  background-color: #f0f7d5;
   border-radius: 5px;
-  border: 1px solid green;
-  height: 25px;
-  width: 48px;
+  border: none;
+  height: 28px;
+  width: 50px;
   cursor: pointer;
+}
+
+.low-priority-btn:hover {
+  color: white;
+  background-color: rgba(71, 152, 71, 0.755);
 }
