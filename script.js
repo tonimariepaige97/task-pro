@@ -123,6 +123,12 @@ function displayCreateTask() {
   usersDescriptionText.placeholder = "Enter Description";
   divForDescriptionInput.append(usersDescriptionText);
 
+  // add priority div for users priority pick
+  const priorityContainer = document.createElement("div");
+  priorityContainer.classList.add("priority-container");
+  priorityContainer.textContent = "Priority";
+  usersInputDiv.append(priorityContainer);
+
   // creating a create task button
   // userRenderTaskBtn.classList.add("user-render-task-btn");
   // userRenderTaskBtn.textContent = "Create Task";

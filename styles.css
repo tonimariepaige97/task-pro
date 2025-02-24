@@ -296,3 +296,10 @@ body {
   height: 50px;
   width: 500px;
 }
+
+.priority-container {
+  margin-top: 20px;
+  height: 40px;
+  width: 500px;
+  border: 1px solid red;
+}
