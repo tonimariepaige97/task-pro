@@ -16,7 +16,6 @@ const userRenderTaskBtn = document.createElement("button");
 const taskTitleDiv = document.createElement("input");
 const usersDescriptionText = document.createElement("input");
 const dueDateInput = document.createElement("input");
-
 const tasksCreatedSection = document.createElement("div");
 const lowPriorityBtn = document.createElement("button");
 const mediumPriorityBtn = document.createElement("button");
@@ -193,6 +192,18 @@ function updateTasks() {
     tasksCreatedSection.append(taskItem);
   }
 }
+
+function resetButtonColor() {
+  lowPriorityBtn.style.backgroundColor = "#f0f7d5";
+  lowPriorityBtn.style.color = "green";
+
+  mediumPriorityBtn.style.backgroundColor = "#ffcb6bc1";
+  mediumPriorityBtn.style.color = "orange";
+
+  highPriorityBtn.style.backgroundColor = "#fc54549c";
+  highPriorityBtn.style.color = "red";
+}
+
 // EVENT LISTENERS
 createTaskBtn.addEventListener("click", function () {
   allTasksPage.innerText = "";
@@ -201,17 +212,26 @@ createTaskBtn.addEventListener("click", function () {
 
 // EVENT LISTENERS FOR THE PRIORITY BUTTONS
 lowPriorityBtn.addEventListener("click", function () {
+  resetButtonColor();
   selectedPriority = "Low";
+  lowPriorityBtn.style.backgroundColor = "rgba(71, 152, 71, 0.755)";
+  lowPriorityBtn.style.color = "white";
   console.log("Priority is set to Low");
 });
 
 mediumPriorityBtn.addEventListener("click", function () {
+  resetButtonColor();
   selectedPriority = "Medium";
+  mediumPriorityBtn.style.backgroundColor = "orange";
+  mediumPriorityBtn.style.color = "white";
   console.log("Priority is set to Medium");
 });
 
 highPriorityBtn.addEventListener("click", function () {
+  resetButtonColor();
   selectedPriority = "High";
+  highPriorityBtn.style.backgroundColor = "red";
+  highPriorityBtn.style.color = "white";
   console.log("Priority is set to High");
 });
 
@@ -225,6 +245,7 @@ userRenderTaskBtn.addEventListener("click", function () {
   };
   arrayOfTasks.push(taskItem);
   updateTasks();
+  // createTaskDisplay = ""; trying to figure out how to make the display disappear
 
   console.log(arrayOfTasks);
 });
