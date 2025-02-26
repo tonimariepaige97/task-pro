@@ -174,7 +174,7 @@ body {
 .create-task-display {
   display: flex;
   flex-direction: row;
-  height: 400px;
+  height: 350px;
   width: 800px;
   background-color: #fff;
   margin-top: 4rem;
@@ -187,7 +187,7 @@ body {
 .create-inside-display-div {
   border-radius: 20px 0px 0px 20px;
   width: 250px;
-  height: 400px;
+  height: 350px;
   background-color: #fbfcf6;
   border-right: 0.5px dotted #c5c4c4;
 }
@@ -204,9 +204,8 @@ body {
 }
 
 .create-task-list-div {
-  height: 555px;
+  height: 275px;
   width: 250px;
-  /* border: 1px solid red; */
 }
 
 .task-list {
@@ -239,11 +238,10 @@ body {
   width: 500px;
   display: flex;
   flex-direction: column;
-  /* border: 1px solid red; */
 }
 
 .users-input-div {
-  height: 377px;
+  height: 328px;
   width: 500px;
   margin-left: 23px;
   margin-top: 23px;
@@ -251,21 +249,28 @@ body {
   background-color: white;
 }
 
+.render-button-div {
+  margin-top: 15px;
+  height: 40px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
 .user-render-task-btn {
   font-size: 16px;
-  color: #717070;
+  color: rgb(21, 118, 21);
   height: 34px;
   width: 100px;
   border-radius: 5px;
-  background-color: #f2f9fc;
+  background-color: rgb(251, 252, 246);
   cursor: pointer;
   border: none;
-  outline: 2px dotted #949494b8;
-  margin-left: 13px;
+  outline: 2px dotted rgba(2, 151, 2, 0.857);
 }
 
 .user-render-task-btn:hover {
-  background-color: #c7ced1;
+  background-color: rgb(228, 238, 178);
 }
 
 .task-title-div {
@@ -298,12 +303,10 @@ body {
 }
 
 .priority-container {
-  /* border: 1px solid red; */
   margin-top: 35px;
   height: 53px;
   width: 500px;
   display: flex;
-  /* justify-content: space-between; */
   flex-direction: column;
   align-items: center;
   gap: 2px;
@@ -368,10 +371,11 @@ body {
 }
 
 .due-date-input {
-  /* color: pink; */
-  font-size: 13px;
+  font-size: 12px;
   margin-left: 5px;
-  border: 1px solid purple;
-  /* border-radius: 8px; */
   cursor: pointer;
+  height: 30px;
+  border: none;
+  border-radius: 2px;
+  background-color: #eeefefe0;
 }
