@@ -160,6 +160,19 @@ function displayCreateTask() {
   // add a high priority button
   highPriorityBtn.classList.add("high-priority-btn");
   highPriorityBtn.textContent = "HIGH";
+  priorityBtns.append(highPriorityBtn);
+
+  // create a div for the due date
+  const dueDateDiv = document.createElement("div");
+  dueDateDiv.classList.add("due-date-div");
+  dueDateDiv.innerHTML = "<strong>Due Date:</strong>";
+  usersInputDiv.append(dueDateDiv);
+
+  // where the due date input is added
+  const dueDateInput = document.createElement("input");
+  dueDateInput.setAttribute("type", "date");
+  dueDateInput.classList.add("due-date-input");
+  dueDateDiv.append(dueDateInput);
 
   // creating a create task button
   // userRenderTaskBtn.classList.add("user-render-task-btn");
