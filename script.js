@@ -174,10 +174,15 @@ function displayCreateTask() {
   dueDateInput.classList.add("due-date-input");
   dueDateDiv.append(dueDateInput);
 
+  // creating a div for the render button
+  const renderBtnDiv = document.createElement("div");
+  renderBtnDiv.classList.add("render-button-div");
+  usersInputDiv.append(renderBtnDiv);
+
   // creating a create task button
-  // userRenderTaskBtn.classList.add("user-render-task-btn");
-  // userRenderTaskBtn.textContent = "Create Task";
-  // divForBtnAndInput.append(userRenderTaskBtn);
+  userRenderTaskBtn.classList.add("user-render-task-btn");
+  userRenderTaskBtn.textContent = "Create Task";
+  renderBtnDiv.append(userRenderTaskBtn);
 }
 
 function updateTasks() {
