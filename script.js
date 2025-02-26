@@ -1,12 +1,12 @@
 //TODO array
-const todoArray = [
-  {
-    todoName: "Get eggs",
-    priority: "Low", // Low | Medium | High
-    dueDate: "02/27/25",
-    description: "I have to buy more eggs at the store this week",
-  },
-];
+// const todoArray = [
+//   {
+//     todoName: "Get eggs",
+//     priority: "Low", // Low | Medium | High
+//     dueDate: "02/27/25",
+//     description: "I have to buy more eggs at the store this week",
+//   },
+// ];
 
 const rightContentSection = document.querySelector(".right-content-section");
 const wholeApp = document.querySelector(".whole-app");
@@ -14,12 +14,24 @@ const createTaskBtn = document.createElement("button");
 const allTasksPage = document.createElement("div");
 const userRenderTaskBtn = document.createElement("button");
 const taskTitleDiv = document.createElement("input");
+const usersDescriptionText = document.createElement("input");
+const dueDateInput = document.createElement("input");
+
 const tasksCreatedSection = document.createElement("div");
 const lowPriorityBtn = document.createElement("button");
 const mediumPriorityBtn = document.createElement("button");
 const highPriorityBtn = document.createElement("button");
 
-const arrayOfTasks = [];
+let selectedPriority = "Low";
+
+const arrayOfTasks = [
+  {
+    taskName: taskTitleDiv.value,
+    description: usersDescriptionText.value,
+    priority: selectedPriority.valueOf,
+    dueDate: dueDateInput.value,
+  },
+];
 
 function displayAllTasksPage() {
   // create an all tasks page for the task page
@@ -95,18 +107,8 @@ function displayCreateTask() {
 
   const taskLi = document.createElement("li");
   taskLi.classList.add("task-li");
-  taskLi.textContent = "Task";
+  taskLi.textContent = "Tasks";
   taskList.appendChild(taskLi);
-
-  const projectTask = document.createElement("li");
-  projectTask.classList.add("project-task");
-  projectTask.textContent = "Project";
-  taskList.appendChild(projectTask);
-
-  const notesTask = document.createElement("li");
-  notesTask.classList.add("notes-task");
-  notesTask.textContent = "Notes";
-  taskList.appendChild(notesTask);
 
   // create div for the users input for their task
   const usersInputDiv = document.createElement("div");
@@ -131,8 +133,7 @@ function displayCreateTask() {
   usersInputDiv.append(divForDescriptionInput);
 
   // create input for description text
-  const usersDescriptionText = document.createElement("input");
-  usersDescriptionText.classList.add("task-title-div");
+  usersDescriptionText.classList.add("users-description-div");
   usersDescriptionText.placeholder = "Enter Description";
   divForDescriptionInput.append(usersDescriptionText);
 
@@ -169,7 +170,6 @@ function displayCreateTask() {
   usersInputDiv.append(dueDateDiv);
 
   // where the due date input is added
-  const dueDateInput = document.createElement("input");
   dueDateInput.setAttribute("type", "date");
   dueDateInput.classList.add("due-date-input");
   dueDateDiv.append(dueDateInput);
@@ -199,15 +199,34 @@ createTaskBtn.addEventListener("click", function () {
   displayCreateTask();
 });
 
-// userRenderTaskBtn.addEventListener("click", function () {
-//   console.log(taskTitleDiv.value);
-//   const taskItem = {
-//     taskName: taskTitleDiv.value,
-//     status: "In progress",
-//   };
-//   arrayOfTasks.push(taskItem);
-//   updateTasks(taskTitleDiv.value);
-//   console.log(arrayOfTasks);
-// });
+// EVENT LISTENERS FOR THE PRIORITY BUTTONS
+lowPriorityBtn.addEventListener("click", function () {
+  selectedPriority = "Low";
+  console.log("Priority is set to Low");
+});
+
+mediumPriorityBtn.addEventListener("click", function () {
+  selectedPriority = "Medium";
+  console.log("Priority is set to Medium");
+});
+
+highPriorityBtn.addEventListener("click", function () {
+  selectedPriority = "High";
+  console.log("Priority is set to High");
+});
+
+userRenderTaskBtn.addEventListener("click", function () {
+  console.log(taskTitleDiv.value);
+  const taskItem = {
+    taskName: taskTitleDiv.value,
+    description: document.querySelector(".users-description-div").value,
+    priority: selectedPriority,
+    dueDate: document.querySelector(".due-date-input").value,
+  };
+  arrayOfTasks.push(taskItem);
+  updateTasks();
+
+  console.log(arrayOfTasks);
+});
 
 // next step - figure out how to get the input from the users input div into the tasksCreatedSection
