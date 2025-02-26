@@ -290,6 +290,23 @@ body {
   color: rgb(118, 117, 117);
 }
 
+.users-description-div {
+  margin-top: 4px;
+  height: 35px;
+  width: 500px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  color: rgb(118, 117, 117);
+  background-color: #f8faf9;
+}
+
+.users-description-div::placeholder {
+  padding-left: 2px;
+  font-size: 13px;
+  color: rgb(118, 117, 117);
+}
+
 .show-created-task {
   border: 1px solid #949494b8;
   height: 20px;
