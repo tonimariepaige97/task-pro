@@ -12,6 +12,7 @@ const rightContentSection = document.querySelector(".right-content-section");
 const wholeApp = document.querySelector(".whole-app");
 const createTaskBtn = document.createElement("button");
 const allTasksPage = document.createElement("div");
+const createTaskDisplay = document.createElement("div");
 const userRenderTaskBtn = document.createElement("button");
 const taskTitleDiv = document.createElement("input");
 const usersDescriptionText = document.createElement("input");
@@ -20,6 +21,7 @@ const tasksCreatedSection = document.createElement("div");
 const lowPriorityBtn = document.createElement("button");
 const mediumPriorityBtn = document.createElement("button");
 const highPriorityBtn = document.createElement("button");
+// const mainPage = document.querySelector(".all-tasks-page");
 
 let selectedPriority = "Low";
 
@@ -79,7 +81,6 @@ function displayCreateTask() {
   allTasksPage.append(createTaskHeader);
 
   // creating create a task display
-  const createTaskDisplay = document.createElement("div");
   createTaskDisplay.classList.add("create-task-display");
   allTasksPage.append(createTaskDisplay);
 
@@ -204,6 +205,22 @@ function resetButtonColor() {
   highPriorityBtn.style.color = "red";
 }
 
+function addTask() {
+  allTasksPage.innerHTML = "";
+  console.log("Task Added!");
+
+  // create div for the added task
+  const createAddedTaskDiv = document.createElement("div");
+  createAddedTaskDiv.classList.add("create-added-task-div");
+  allTasksPage.append(createAddedTaskDiv);
+
+  // create header for task created
+  const taskAddedHeader = document.createElement("p");
+  taskAddedHeader.classList.add("task-added-header");
+  taskAddedHeader.textContent = "Task Added";
+  createAddedTaskDiv.append(taskAddedHeader);
+}
+
 // EVENT LISTENERS
 createTaskBtn.addEventListener("click", function () {
   allTasksPage.innerText = "";
@@ -243,8 +260,9 @@ userRenderTaskBtn.addEventListener("click", function () {
     priority: selectedPriority,
     dueDate: document.querySelector(".due-date-input").value,
   };
+
   arrayOfTasks.push(taskItem);
-  updateTasks();
+  addTask();
   // createTaskDisplay = ""; trying to figure out how to make the display disappear
 
   console.log(arrayOfTasks);
