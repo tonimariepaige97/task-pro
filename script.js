@@ -219,6 +219,57 @@ function addTask() {
   taskAddedHeader.classList.add("task-added-header");
   taskAddedHeader.textContent = "Task Added";
   createAddedTaskDiv.append(taskAddedHeader);
+
+  // create users task created rendered div
+  const userTaskCreatedDiv = document.createElement("div");
+  userTaskCreatedDiv.classList.add("user-task-created-div");
+  createAddedTaskDiv.append(userTaskCreatedDiv);
+
+  const userTaskCreated = document.createElement("li");
+  userTaskCreated.classList.add("user-task-created");
+  userTaskCreatedDiv.append(userTaskCreated);
+
+  const titleOfTask = document.createElement("p");
+  titleOfTask.classList.add("title-of-task");
+  titleOfTask.textContent = `Title: ${
+    arrayOfTasks[arrayOfTasks.length - 1].taskName
+  }`;
+  userTaskCreated.append(titleOfTask);
+
+  const descriptionOfTask = document.createElement("p");
+  descriptionOfTask.classList.add("description-of-task");
+  descriptionOfTask.textContent = `Description: ${
+    arrayOfTasks[arrayOfTasks.length - 1].description
+  }`;
+  userTaskCreated.append(descriptionOfTask);
+
+  const priorityOfTask = document.createElement("p");
+  priorityOfTask.classList.add("priortiy-of-task");
+  priorityOfTask.textContent = `Priority: ${
+    arrayOfTasks[arrayOfTasks.length - 1].priority
+  }`;
+  userTaskCreated.append(priorityOfTask);
+
+  const dateDueOfTask = document.createElement("p");
+  dateDueOfTask.classList.add("date-due-of-task");
+  dateDueOfTask.textContent = `Date Due: ${
+    arrayOfTasks[arrayOfTasks.length - 1].dueDate
+  }`;
+  userTaskCreated.append(dateDueOfTask);
+
+  const functionalBtnsOfAddedTask = document.createElement("div");
+  functionalBtnsOfAddedTask.classList.add("functional-btns-of-added-task");
+  userTaskCreated.append(functionalBtnsOfAddedTask);
+
+  const completeBtn = document.createElement("button");
+  completeBtn.classList.add("complete-button");
+  completeBtn.textContent = "Done";
+  functionalBtnsOfAddedTask.append(completeBtn);
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("delete-button");
+  deleteBtn.textContent = "Delete";
+  functionalBtnsOfAddedTask.append(deleteBtn);
 }
 
 // EVENT LISTENERS
