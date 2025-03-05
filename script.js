@@ -13,6 +13,7 @@ const wholeApp = document.querySelector(".whole-app");
 const createTaskBtn = document.createElement("button");
 const allTasksPage = document.createElement("div");
 const createTaskDisplay = document.createElement("div");
+const userTaskCreatedDiv = document.createElement("div");
 const userRenderTaskBtn = document.createElement("button");
 const taskTitleDiv = document.createElement("input");
 const usersDescriptionText = document.createElement("input");
@@ -21,6 +22,9 @@ const tasksCreatedSection = document.createElement("div");
 const lowPriorityBtn = document.createElement("button");
 const mediumPriorityBtn = document.createElement("button");
 const highPriorityBtn = document.createElement("button");
+const completeBtn = document.createElement("button");
+const deleteBtn = document.createElement("button");
+
 // const mainPage = document.querySelector(".all-tasks-page");
 
 let selectedPriority = "Low";
@@ -221,7 +225,6 @@ function addTask() {
   createAddedTaskDiv.append(taskAddedHeader);
 
   // create users task created rendered div
-  const userTaskCreatedDiv = document.createElement("div");
   userTaskCreatedDiv.classList.add("user-task-created-div");
   createAddedTaskDiv.append(userTaskCreatedDiv);
 
@@ -261,12 +264,10 @@ function addTask() {
   functionalBtnsOfAddedTask.classList.add("functional-btns-of-added-task");
   userTaskCreated.append(functionalBtnsOfAddedTask);
 
-  const completeBtn = document.createElement("button");
   completeBtn.classList.add("complete-button");
   completeBtn.textContent = "Done";
   functionalBtnsOfAddedTask.append(completeBtn);
 
-  const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("delete-button");
   deleteBtn.textContent = "Delete";
   functionalBtnsOfAddedTask.append(deleteBtn);
@@ -319,4 +320,21 @@ userRenderTaskBtn.addEventListener("click", function () {
   console.log(arrayOfTasks);
 });
 
+completeBtn.addEventListener("click", function (event) {
+  const taskItem = event.target.closest(".user-task-created"); // Get the task container
+  if (taskItem) {
+    // Select all text elements inside the task container (excluding buttons)
+    taskItem.querySelectorAll("p").forEach((textElement) => {
+      textElement.style.textDecoration =
+        textElement.style.textDecoration === "line-through"
+          ? "none"
+          : "line-through";
+    });
+  }
+});
+
+// will need to make the specific delete button targeted
+deleteBtn.addEventListener("click", function () {
+  userTaskCreatedDiv.innerHTML = "";
+});
 // next step - figure out how to get the input from the users input div into the tasksCreatedSection
