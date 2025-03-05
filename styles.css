@@ -446,5 +446,43 @@ body {
 .functional-btns-of-added-task {
   height: 35px;
   width: 150px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.complete-button {
+  font-size: 14px;
+  color: #717070;
+  height: 25px;
+  width: 50px;
+  border-radius: 5px;
+  background-color: #c1f6c1;
+  cursor: pointer;
+  border: none;
+  /* outline: 2px dotted #adbdacb8; */
+}
+
+.complete-button:hover {
+  background-color: #20b84e;
+  color: white;
+}
+
+.delete-button {
+  font-size: 14px;
+  color: #717070;
+  height: 25px;
+  width: 50px;
+  border-radius: 5px;
+  background-color: #e8756bde;
+  cursor: pointer;
+  border: none;
+  /* outline: 2px dotted #949494b8; */
+  margin-left: 15px;
+}
+
+.delete-button:hover {
+  background-color: #9c3930;
+  color: white;
 }
