@@ -50,40 +50,9 @@ body {
   height: 680px;
 }
 
-/* SEARCH BAR */
-
-.search-bar-display {
-  height: 3.5rem;
-  width: 40rem;
-  color: #717070;
-  font-size: 20px;
-}
-
-.search-bar-display {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  outline-color: #c9caca;
-  display: flex;
-  width: 30rem;
-  border-radius: 12px;
-  height: 50px;
-  font-size: 18px;
-  background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
-  background-repeat: no-repeat;
-  background-position: left center;
-  padding-left: 40px;
-  margin-left: 15px;
-  margin-top: 15px;
-  background-color: #fff;
-  border: 1px solid #000;
-  box-shadow: none;
-}
-
-.search-bar ::placeholder {
-  font-size: 18px;
-}
-
 /* TASK SECTION */
 
+/* change to task pro */
 .all-tasks-page {
   height: 810px;
   width: 800px;
@@ -143,9 +112,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: space-between;
-  /* padding-top: 18px;
-  padding-bottom: 16px; */
-  width: 780px;
+  width: 65rem;
   height: 60px;
   border-radius: 5px;
   border: 1px solid #949494b8;
@@ -439,7 +406,7 @@ body {
   justify-content: center;
   gap: 40px;
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 5px;
   border-radius: 10px;
 }
 
@@ -478,11 +445,38 @@ body {
   background-color: #e8756bde;
   cursor: pointer;
   border: none;
-  /* outline: 2px dotted #949494b8; */
   margin-left: 15px;
 }
 
 .delete-button:hover {
   background-color: #9c3930;
   color: white;
+}
+
+.added-task-btn {
+  font-size: 14px;
+  color: #717070;
+  height: 41px;
+  width: 120px;
+  border-radius: 5px;
+  background-color: #f1f7fa;
+  cursor: pointer;
+  border: none;
+}
+
+.added-task-btn:hover {
+  background-color: #90b9ce;
+  color: white;
+}
+
+.div-for-added-task-btn {
+  /* height: 50px; */
+  width: 750px;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 15px;
 }
