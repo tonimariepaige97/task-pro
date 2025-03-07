@@ -12,6 +12,7 @@ const rightContentSection = document.querySelector(".right-content-section");
 const wholeApp = document.querySelector(".whole-app");
 const createTaskBtn = document.createElement("button");
 const allTasksPage = document.createElement("div");
+const createTaskHeader = document.createElement("p");
 const createTaskDisplay = document.createElement("div");
 const userTaskCreatedDiv = document.createElement("div");
 const userRenderTaskBtn = document.createElement("button");
@@ -24,6 +25,7 @@ const mediumPriorityBtn = document.createElement("button");
 const highPriorityBtn = document.createElement("button");
 const completeBtn = document.createElement("button");
 const deleteBtn = document.createElement("button");
+const addedTaskBtn = document.createElement("button");
 
 // const mainPage = document.querySelector(".all-tasks-page");
 
@@ -56,7 +58,7 @@ function displayAllTasksPage() {
   // create all tasks p element
   const allTasksPElement = document.createElement("p");
   allTasksPElement.classList.add("all-tasks-p-element");
-  allTasksPElement.textContent = "All Tasks";
+  allTasksPElement.textContent = "Task Pro";
   createTaskSection.append(allTasksPElement);
 
   // create a container for the buttons
@@ -79,7 +81,6 @@ displayAllTasksPage();
 
 function displayCreateTask() {
   // creating the create a task header
-  const createTaskHeader = document.createElement("p");
   createTaskHeader.classList.add("create-task-header");
   createTaskHeader.innerText = "Create A Task";
   allTasksPage.append(createTaskHeader);
@@ -271,12 +272,35 @@ function addTask() {
   deleteBtn.classList.add("delete-button");
   deleteBtn.textContent = "Delete";
   functionalBtnsOfAddedTask.append(deleteBtn);
+
+  // create div for added task button
+  const divForAddedTaskBtn = document.createElement("div");
+  divForAddedTaskBtn.classList.add("div-for-added-task-btn");
+  userTaskCreatedDiv.append(divForAddedTaskBtn);
+
+  // create button for adding another task to the mix
+  addedTaskBtn.classList.add("added-task-btn");
+  addedTaskBtn.textContent = "Add another task";
+  divForAddedTaskBtn.append(addedTaskBtn);
 }
 
 // EVENT LISTENERS
 createTaskBtn.addEventListener("click", function () {
   allTasksPage.innerText = "";
   displayCreateTask();
+});
+
+addedTaskBtn.addEventListener("click", function () {
+  allTasksPage.innerText = "";
+  displayCreateTask();
+  createTaskDisplay.innerText = "";
+  createTaskHeader.innerText = "";
+  displayCreateTask();
+  resetButtonColor();
+  taskTitleDiv.value = "";
+  usersDescriptionText.value = "";
+  dueDateInput.value = "";
+  priorityOfTask.value = "";
 });
 
 // EVENT LISTENERS FOR THE PRIORITY BUTTONS
