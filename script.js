@@ -23,15 +23,24 @@ const tasksCreatedSection = document.createElement("div");
 const lowPriorityBtn = document.createElement("button");
 const mediumPriorityBtn = document.createElement("button");
 const highPriorityBtn = document.createElement("button");
+const functionalBtnsOfAddedTask = document.createElement("div");
 const completeBtn = document.createElement("button");
 const deleteBtn = document.createElement("button");
 const addedTaskBtn = document.createElement("button");
+const priorityOfTask = document.createElement("p");
+const userTaskCreated = document.createElement("li");
+const taskContainer = document.createElement("div");
+const titleOfTask = document.createElement("p");
+const descriptionOfTask = document.createElement("p");
+const dateDueOfTask = document.createElement("p");
+const completeAndDeleteButtonDiv = document.createElement("div");
+const divForAddedTaskBtn = document.createElement("div");
 
 // const mainPage = document.querySelector(".all-tasks-page");
 
 let selectedPriority = "Low";
 
-const arrayOfTasks = [
+let arrayOfTasks = JSON.parse(localStorage.getItem("tasks")) || [
   {
     taskName: taskTitleDiv.value,
     description: usersDescriptionText.value,
@@ -39,6 +48,10 @@ const arrayOfTasks = [
     dueDate: dueDateInput.value,
   },
 ];
+
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(arrayOfTasks));
+}
 
 function displayAllTasksPage() {
   // create an all tasks page for the task page
@@ -229,52 +242,56 @@ function addTask() {
   userTaskCreatedDiv.classList.add("user-task-created-div");
   createAddedTaskDiv.append(userTaskCreatedDiv);
 
-  const userTaskCreated = document.createElement("li");
-  userTaskCreated.classList.add("user-task-created");
-  userTaskCreatedDiv.append(userTaskCreated);
+  // the tasks need to be cleared before re-rendering
+  userTaskCreatedDiv.innerHTML = "";
 
-  const titleOfTask = document.createElement("p");
-  titleOfTask.classList.add("title-of-task");
-  titleOfTask.textContent = `Title: ${
-    arrayOfTasks[arrayOfTasks.length - 1].taskName
-  }`;
-  userTaskCreated.append(titleOfTask);
+  arrayOfTasks.forEach((task, index) => {
+    taskContainer.classList.add("task-container");
 
-  const descriptionOfTask = document.createElement("p");
-  descriptionOfTask.classList.add("description-of-task");
-  descriptionOfTask.textContent = `Description: ${
-    arrayOfTasks[arrayOfTasks.length - 1].description
-  }`;
-  userTaskCreated.append(descriptionOfTask);
+    userTaskCreated.classList.add("user-task-created");
 
-  const priorityOfTask = document.createElement("p");
-  priorityOfTask.classList.add("priortiy-of-task");
-  priorityOfTask.textContent = `Priority: ${
-    arrayOfTasks[arrayOfTasks.length - 1].priority
-  }`;
-  userTaskCreated.append(priorityOfTask);
+    titleOfTask.classList.add("title-of-task");
+    titleOfTask.textContent = `Title: ${task.taskName}`;
 
-  const dateDueOfTask = document.createElement("p");
-  dateDueOfTask.classList.add("date-due-of-task");
-  dateDueOfTask.textContent = `Date Due: ${
-    arrayOfTasks[arrayOfTasks.length - 1].dueDate
-  }`;
-  userTaskCreated.append(dateDueOfTask);
+    descriptionOfTask.classList.add("description-of-task");
+    descriptionOfTask.textContent = `Description: ${task.description}`;
 
-  const functionalBtnsOfAddedTask = document.createElement("div");
-  functionalBtnsOfAddedTask.classList.add("functional-btns-of-added-task");
-  userTaskCreated.append(functionalBtnsOfAddedTask);
+    priorityOfTask.classList.add("priortiy-of-task");
+    priorityOfTask.textContent = `Priority: ${task.priority}`;
 
-  completeBtn.classList.add("complete-button");
-  completeBtn.textContent = "Done";
-  functionalBtnsOfAddedTask.append(completeBtn);
+    dateDueOfTask.classList.add("date-due-of-task");
+    dateDueOfTask.textContent = `Due Date: ${task.dueDate}`;
 
-  deleteBtn.classList.add("delete-button");
-  deleteBtn.textContent = "Delete";
-  functionalBtnsOfAddedTask.append(deleteBtn);
+    // functionalBtnsOfAddedTask.classList.add("functional-btns-of-added-task");
+    // userTaskCreated.append(functionalBtnsOfAddedTask);
+    completeAndDeleteButtonDiv.classList.add("comp-and-del-btn-div");
+    completeBtn.classList.add("complete-button");
+    completeBtn.textContent = "Done";
+    // functionalBtnsOfAddedTask.append(completeBtn);
 
+    deleteBtn.classList.add("delete-button");
+    deleteBtn.textContent = "Delete";
+    // deleteBtn.addEventListener("click", function () {
+    //   arrayOfTasks.splice(index, 1);
+    //   saveTasks();
+    //   addTask();
+    // });
+
+    // functionalBtnsOfAddedTask.append(deleteBtn);
+  });
+
+  taskContainer.append(
+    titleOfTask,
+    descriptionOfTask,
+    priorityOfTask,
+    dateDueOfTask,
+    completeAndDeleteButtonDiv
+  );
+
+  completeAndDeleteButtonDiv.append(completeBtn, deleteBtn);
+
+  userTaskCreatedDiv.append(taskContainer);
   // create div for added task button
-  const divForAddedTaskBtn = document.createElement("div");
   divForAddedTaskBtn.classList.add("div-for-added-task-btn");
   userTaskCreatedDiv.append(divForAddedTaskBtn);
 
@@ -282,6 +299,7 @@ function addTask() {
   addedTaskBtn.classList.add("added-task-btn");
   addedTaskBtn.textContent = "Add another task";
   divForAddedTaskBtn.append(addedTaskBtn);
+  saveTasks();
 }
 
 // EVENT LISTENERS
@@ -298,9 +316,9 @@ addedTaskBtn.addEventListener("click", function () {
   displayCreateTask();
   resetButtonColor();
   taskTitleDiv.value = "";
-  usersDescriptionText.value = "";
-  dueDateInput.value = "";
-  priorityOfTask.value = "";
+  // usersDescriptionText.value = "";
+  // dueDateInput.value = "";
+  // priorityOfTask.value = "";
 });
 
 // EVENT LISTENERS FOR THE PRIORITY BUTTONS
@@ -329,6 +347,10 @@ highPriorityBtn.addEventListener("click", function () {
 });
 
 userRenderTaskBtn.addEventListener("click", function () {
+  if (!taskTitleDiv.value.trim()) {
+    alert("Please enter a task title.");
+    return;
+  }
   console.log(taskTitleDiv.value);
   const taskItem = {
     taskName: taskTitleDiv.value,
@@ -338,14 +360,16 @@ userRenderTaskBtn.addEventListener("click", function () {
   };
 
   arrayOfTasks.push(taskItem);
+  saveTasks();
   addTask();
-  // createTaskDisplay = ""; trying to figure out how to make the display disappear
 
-  console.log(arrayOfTasks);
+  taskTitleDiv.value = "";
+  descriptionOfTask.value = "";
+  dueDateInput.value = "";
 });
 
 completeBtn.addEventListener("click", function (event) {
-  const taskItem = event.target.closest(".user-task-created"); // Get the task container
+  const taskItem = event.target.closest(".task-container"); // Get the task container
   if (taskItem) {
     // Select all text elements inside the task container (excluding buttons)
     taskItem.querySelectorAll("p").forEach((textElement) => {
@@ -359,6 +383,6 @@ completeBtn.addEventListener("click", function (event) {
 
 // will need to make the specific delete button targeted
 deleteBtn.addEventListener("click", function () {
-  userTaskCreatedDiv.innerHTML = "";
+  taskContainer.innerHTML = "";
 });
 // next step - figure out how to get the input from the users input div into the tasksCreatedSection
