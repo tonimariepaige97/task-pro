@@ -480,3 +480,11 @@ body {
   margin-right: 20px;
   margin-top: 15px;
 }
+
+.task-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border: 1px solid blue;
+  height: 500px;
+}
