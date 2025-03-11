@@ -391,6 +391,9 @@ body {
 .user-task-created-div {
   height: 750px;
   width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   /* border: 1px solid rgb(165, 165, 165); */
 }
@@ -454,9 +457,11 @@ body {
 }
 
 .added-task-btn {
+  margin-top: 10px;
+  margin-right: 10px;
   font-size: 14px;
   color: #717070;
-  height: 41px;
+  height: 40px;
   width: 120px;
   border-radius: 5px;
   background-color: #f1f7fa;
@@ -470,15 +475,11 @@ body {
 }
 
 .div-for-added-task-btn {
-  /* height: 50px; */
-  width: 750px;
-  /* border: 1px solid red; */
+  /* border: 1px solid green; */
+  height: 60px;
+  width: 800px;
   display: flex;
   justify-content: end;
-  align-items: center;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 15px;
 }
 
 .task-container {
@@ -486,5 +487,20 @@ body {
   justify-content: center;
   gap: 20px;
   border: 1px solid blue;
-  height: 500px;
+  height: 50px;
+}
+
+.individual-task {
+  border: 1px solid rgba(220, 218, 218, 0.826);
+  border-radius: 7px;
+  width: 790px;
+  height: 45px;
+  gap: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  margin-top: 3px;
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(212, 217, 236, 0.05),
+    0 15px 40px rgba(203, 209, 234, 0.2);
 }
