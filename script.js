@@ -1,7 +1,6 @@
 console.clear();
 
 const individualDivForMultipleTasks = document.createElement("div");
-
 const rightContentSection = document.querySelector(".right-content-section");
 const wholeApp = document.querySelector(".whole-app");
 const createTaskBtn = document.createElement("button");
@@ -18,10 +17,12 @@ const lowPriorityBtn = document.createElement("button");
 const mediumPriorityBtn = document.createElement("button");
 const highPriorityBtn = document.createElement("button");
 const functionalBtnsOfAddedTask = document.createElement("div");
-
+const taskOverview = document.querySelector(".task-display");
 const taskContainer = document.createElement("div");
-
 const divForAddedTaskBtn = document.createElement("div");
+const tasksCompleted = document.querySelector(".completed-tasks");
+const tasksNotCompleted = document.querySelector(".not-completed-tasks");
+const allTasks = document.querySelector(".overall-tasks");
 
 // const mainPage = document.querySelector(".all-tasks-page");
 
@@ -329,6 +330,9 @@ function addTask() {
   // saveTasks();
 }
 
+function addTasksToSideBar() {
+  // i'm going to have to filter through the array to get the not completed, completed and All tasks on the sidebar
+}
 // EVENT LISTENERS
 createTaskBtn.addEventListener("click", function () {
   allTasksPage.innerText = "";
@@ -375,25 +379,5 @@ userRenderTaskBtn.addEventListener("click", function () {
   };
 
   arrayOfTasks.push(taskItem);
-  // saveTasks();
   addTask();
 });
-
-// completeBtn.addEventListener("click", function (event) {
-//   const taskItem = event.target.closest(".individual-div-multiple-task"); // Get the task container
-//   if (taskItem) {
-//     // Select all text elements inside the task container (excluding buttons)
-//     taskItem.querySelectorAll("p").forEach((textElement) => {
-//       textElement.style.textDecoration =
-//         textElement.style.textDecoration === "line-through"
-//           ? "none"
-//           : "line-through";
-//     });
-//   }
-// });
-
-// will need to make the specific delete button targeted
-// deleteBtn.addEventListener("click", function () {
-//   individualDivForMultipleTasks.innerHTML = "";
-// });
-// next step - figure out how to get the input from the users input div into the tasksCreatedSection
