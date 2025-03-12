@@ -48,6 +48,7 @@ body {
 
 .task-display {
   height: 680px;
+  border: 1px solid black;
 }
 
 /* TASK SECTION */
@@ -87,6 +88,7 @@ body {
 
 .power-mode-button {
   margin-left: 7px;
+  background-color: #fcf8f2;
 }
 
 .create-task-button:hover {
@@ -94,7 +96,7 @@ body {
 }
 
 .power-mode-button:hover {
-  background-color: #fff3e4e0;
+  background-color: #e4ecffe0;
 }
 /* Create Task Section */
 
@@ -112,10 +114,13 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: space-between;
-  width: 65rem;
-  height: 60px;
+  width: 30rem;
+  height: 70px;
+  margin-top: 20rem;
+  margin-left: 20rem;
   border-radius: 5px;
-  border: 1px solid #949494b8;
+  box-shadow: 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
   background-color: #fff;
 }
 
